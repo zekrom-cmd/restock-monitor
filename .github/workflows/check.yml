@@ -1,0 +1,22 @@
+name: Restock-Check
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: restock
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 monitor.py
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+      - name: Status speichern
+        run: |
+          git config user.name "restock-bot"
+          git config user.email "restock-bot@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || (git commit -m "Status aktualisiert" && git push)
