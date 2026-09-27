@@ -1,10 +1,19 @@
 {
   "products": [
     {
+      "name": "Sevensheaven Slim Fit Black",
       "url": "https://sevenheavens.de/products/slim-t-shirt",
       "variants": [
         "Black / S",
         "Black / M"
+      ]
+    },
+    {
+      "name": "Sevensheaven Slim Fit White",
+      "url": "https://sevenheavens.de/products/slim-t-shirt-3",
+      "variants": [
+        "White / S",
+        "White / M"
       ]
     }
   ]

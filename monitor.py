@@ -51,8 +51,9 @@ def main():
             if avail and was is not True:
                 link = p["url"].split("?")[0] + f"?variant={v['id']}"
                 price = f"{v['price'] / 100:.2f} EUR".replace(".", ",")
-                notify(os.environ.get("NTFY_TOPIC") or cfg.get("ntfy_topic"), f"Restock: {data['title']}",
-                       f"{v['title']} ist wieder da ({price})", link)
+                size = v['title'].split("/")[-1].strip()
+                notify(os.environ.get("NTFY_TOPIC") or cfg.get("ntfy_topic"), p.get("name") or data['title'],
+                       f"Größe {size} ist wieder da ({price})", link)
                 log(f"RESTOCK {data['title']} {v['title']}")
             elif was is not None and was != avail:
                 log(f"ausverkauft {data['title']} {v['title']}")
