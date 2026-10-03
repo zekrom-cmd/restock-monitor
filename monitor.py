@@ -53,7 +53,7 @@ def main():
                 price = f"{v['price'] / 100:.2f} EUR".replace(".", ",")
                 size = v['title'].split("/")[-1].strip()
                 notify(os.environ.get("NTFY_TOPIC") or cfg.get("ntfy_topic"), p.get("name") or data['title'],
-                       f"Größe {size} ist wieder da ({price})", link)
+                       (f"Größe {size} ist wieder da ({price})" if size != "Default Title" else f"Ist wieder da ({price})"), link)
                 log(f"RESTOCK {data['title']} {v['title']}")
             elif was is not None and was != avail:
                 log(f"ausverkauft {data['title']} {v['title']}")
