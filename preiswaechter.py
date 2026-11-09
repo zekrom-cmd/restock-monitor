@@ -2,7 +2,7 @@
 """Preiswaechter: ein bestimmtes Teil in einer Groesse bei allen serioesen Shops beobachten und sofort melden,
 sobald es lieferbar ist und hoechstens max_preis kostet.
 
-Laeuft doppelt wie der Restock-Melder: auf dem Mac per launchd alle 5 Minuten und auf GitHub Actions
+Laeuft doppelt wie der Restock-Melder: auf dem Mac per launchd alle 2 Minuten und auf GitHub Actions
 (zekrom-cmd/restock-monitor) fuer die Zeit, in der der Mac schlaeft. Deshalb ohne Abhaengigkeit zum Finder,
 nur curl_cffi. Jede Kopie hat ihren eigenen Stand (preiswaechter-stand.json).
 
@@ -32,7 +32,7 @@ DIR = Path(__file__).resolve().parent
 CONFIG = DIR / "preiswaechter.json"
 STAND = DIR / "preiswaechter-stand.json"
 RESTOCK_CONFIG = Path.home() / "Library/Application Support/restock-monitor/config.json"
-WARNEN_NACH = 6  # so viele Fehlversuche hintereinander, dann Warn-Push (Mac: 30 Minuten)
+WARNEN_NACH = 15  # so viele Fehlversuche hintereinander, dann Warn-Push (Mac: 30 Minuten)
 DEC = json.JSONDecoder()
 
 
