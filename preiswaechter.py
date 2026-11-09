@@ -7,6 +7,7 @@ Laeuft doppelt wie der Restock-Melder: auf dem Mac per launchd alle 5 Minuten un
 nur curl_cffi. Jede Kopie hat ihren eigenen Stand (preiswaechter-stand.json).
 
 preiswaechter.json -> "teile": [{"name", "groesse", "max_preis", "seiten": [{"shop", "url", ...}]}]
+"github": false an einer Seite: nur der Mac prueft sie (P&C und Anson's sperren GitHub mit 403).
 Push, wenn ein Angebot in der Groesse lieferbar ist, <= max_preis kostet und das neu ist (vorher nicht
 lieferbar oder zu teuer, oder jetzt billiger als zuletzt). Ist ein Shop mehrmals hintereinander nicht lesbar
 (gesperrt, umgebaut), kommt eine Warn-Push, damit nichts unbemerkt durchrutscht.
@@ -228,6 +229,8 @@ def main():
     for teil in cfg["teile"]:
         gr = teil["groesse"].upper()
         for seite in teil["seiten"]:
+            if os.environ.get("GITHUB_ACTIONS") and seite.get("github") is False:
+                continue  # Shop sperrt Rechenzentrums-Adressen, prueft nur der Mac
             sk = f"{teil['name']}|{seite['shop']}|{seite.get('url') or seite['suche'][0]}"
             try:
                 angebote = ABRUFE[seite["shop"]](sz, seite, stand)

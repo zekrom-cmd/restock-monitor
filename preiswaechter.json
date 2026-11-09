@@ -7,8 +7,8 @@
    "seiten": [
     {"shop": "zalando", "url": "https://www.zalando.de/blauer-adams-winterjacke-black-bm922t0jf-q11.html"},
     {"shop": "sportano", "url": "https://sportano.de/p/1062062/herrenjacke-blauer-usa-adams-black-inside-beige"},
-    {"shop": "peek", "url": "https://www.peek-cloppenburg.de/de/p/blauer-usa-regular-fit-steppjacke-mit-kapuze-modell-adams-black-1040058"},
-    {"shop": "peek", "url": "https://www.ansons.de/de/p/blauer-regular-fit-steppjacke-mit-kapuze-modell-adams-black-1040058"},
+    {"shop": "peek", "url": "https://www.peek-cloppenburg.de/de/p/blauer-usa-regular-fit-steppjacke-mit-kapuze-modell-adams-black-1040058", "github": false},
+    {"shop": "peek", "url": "https://www.ansons.de/de/p/blauer-regular-fit-steppjacke-mit-kapuze-modell-adams-black-1040058", "github": false},
     {"shop": "engelhorn", "url": "https://www.engelhorn.de/de-de/blauer-herren-steppjacke-adams-schwarz-V1126951G.html"},
     {"shop": "breuninger", "url": "https://www.breuninger.com/de/marken/blauer/steppjacke-adams/1003406610/p/", "farbe": "SCHWARZ"},
     {"shop": "miinto", "modell": "BLUC02054", "farbe": "Schwarz", "link_muster": "/p-adams-[a-z-]*-[0-9a-f-]{36}",
