@@ -1,0 +1,132 @@
+{
+ "angebote": {
+  "Blauer Adams schwarz|zalando:S": {
+   "da": false,
+   "preis": 314.95,
+   "passt": false
+  },
+  "Blauer Adams schwarz|sportano:S": {
+   "da": false,
+   "preis": 224.99,
+   "passt": false
+  },
+  "Blauer Adams schwarz|breuninger:S": {
+   "da": false,
+   "preis": 299.99,
+   "passt": false
+  },
+  "Blauer Adams schwarz|miinto:c605caac-fdc3-450a-9e8c-1de690549649:S": {
+   "da": true,
+   "preis": 319.0,
+   "passt": false
+  }
+ },
+ "fehler": {
+  "Blauer Adams schwarz|zalando|https://www.zalando.de/blauer-adams-winterjacke-black-bm922t0jf-q11.html": 0,
+  "Blauer Adams schwarz|sportano|https://sportano.de/p/1062062/herrenjacke-blauer-usa-adams-black-inside-beige": 0,
+  "Blauer Adams schwarz|peek|https://www.peek-cloppenburg.de/de/p/blauer-usa-regular-fit-steppjacke-mit-kapuze-modell-adams-black-1040058": 1,
+  "Blauer Adams schwarz|peek|https://www.ansons.de/de/p/blauer-regular-fit-steppjacke-mit-kapuze-modell-adams-black-1040058": 1,
+  "Blauer Adams schwarz|engelhorn|https://www.engelhorn.de/de-de/blauer-herren-steppjacke-adams-schwarz-V1126951G.html": 0,
+  "Blauer Adams schwarz|breuninger|https://www.breuninger.com/de/marken/blauer/steppjacke-adams/1003406610/p/": 0,
+  "Blauer Adams schwarz|miinto|https://www.miinto.de/herren-jacken/blauer": 0
+ },
+ "miinto": {
+  "/p-adams-blouson-f351ff19-4f24-42c9-aaa7-503104f314e4": {
+   "passt": false
+  },
+  "/p-adams-daunenjacke-c5f4a0e6-011f-4f9e-8f23-a2ec3dd46b6d": {
+   "passt": false
+  },
+  "/p-adams-daunenjacke-e5ae3db2-522c-4ace-9256-b3d76f0971b8": {
+   "passt": false
+  },
+  "/p-adams-eco-nylon-jacke-78a1da28-268a-450b-9492-40658fd6faae": {
+   "passt": false
+  },
+  "/p-adams-gesteppte-kapuzenjacke-ee40a0fa-6812-444e-8329-d0ee0bc6a9ce": {
+   "passt": true
+  },
+  "/p-adams-jacke-0c8bd136-a644-440e-b9f1-e07b8adf8467": {
+   "passt": true
+  },
+  "/p-adams-jacke-52498d73-d28a-4223-9905-64945438a155": {
+   "passt": false
+  },
+  "/p-adams-jacke-5c9d19fd-36a5-4ae1-acfa-486fc1014149": {
+   "passt": false
+  },
+  "/p-adams-jacke-62f0822b-6025-4e1f-8fee-b55d7f807bb5": {
+   "passt": false
+  },
+  "/p-adams-jacke-7bd9b43c-bdeb-4a50-a944-9292cd1f2938": {
+   "passt": true
+  },
+  "/p-adams-jacke-83a7d137-7f97-4d19-aae6-270aece65304": {
+   "passt": false
+  },
+  "/p-adams-jacke-93c14378-0fad-437b-925c-676fd4f94c4e": {
+   "passt": false
+  },
+  "/p-adams-jacke-9b6edd03-e59d-40a5-bf22-9edf2173c0d4": {
+   "passt": false
+  },
+  "/p-adams-jacke-b5bdaf19-a7b9-4077-94dc-ba60e483f717": {
+   "passt": false
+  },
+  "/p-adams-jacke-c605caac-fdc3-450a-9e8c-1de690549649": {
+   "passt": true
+  },
+  "/p-adams-jacket-0e0d74dd-ab20-483a-b0ee-384336412267": {
+   "passt": true
+  },
+  "/p-adams-jacket-4452a7a9-b911-4063-9da2-73aad52ef83b": {
+   "passt": false
+  },
+  "/p-adams-jacket-aa482db9-36ec-4007-b0e8-4ebc9a59cd07": {
+   "passt": false
+  },
+  "/p-adams-jacket-b9f236a8-01e5-49e2-b8ed-f781cc79bf7e": {
+   "passt": false
+  },
+  "/p-adams-kurze-steppjacke-c051c790-9e5a-410e-9844-41bf73648899": {
+   "passt": false
+  },
+  "/p-adams-padded-jacket-4d6f8f13-9b95-43ff-a0d9-c666f9ceefa9": {
+   "passt": false
+  },
+  "/p-adams-padded-jacket-607f1c41-08a8-439f-ab07-b546b63718e7": {
+   "passt": true
+  },
+  "/p-adams-padded-jacket-6187c4c5-ddaf-48cb-a11b-7cca785ff013": {
+   "passt": false
+  },
+  "/p-adams-padded-jacket-753f8d07-d506-446c-8e3f-70878a7116f5": {
+   "passt": false
+  },
+  "/p-adams-padded-jacket-7e5114b7-cca9-40e9-8ad3-f0e5f71cc663": {
+   "passt": false
+  },
+  "/p-adams-padded-jacket-b1316d4a-7528-4cd6-9bc9-f99004caf93a": {
+   "passt": true
+  },
+  "/p-adams-puffer-jacket-6783efb5-c808-4759-97ce-5c186b767d66": {
+   "passt": false
+  },
+  "/p-adams-puffer-jacket-8a4cde77-6092-4f58-82d4-d894e3d1a068": {
+   "passt": false
+  },
+  "/p-adams-steppjacke-280cc0d3-b1c2-4bea-ab9c-59c48fb07a5d": {
+   "passt": false
+  },
+  "/p-adams-steppjacke-83c0347e-e4fe-4d6e-80e8-c6deda884a04": {
+   "passt": true
+  },
+  "/p-adams-steppjacke-b193393d-94c7-4126-893b-40889b32c494": {
+   "passt": false
+  },
+  "/p-adams-steppjacke-de8e86e0-738a-4dd2-ab6a-e415e60201d2": {
+   "passt": false
+  }
+ },
+ "zuletzt": "2026-11-09T15:15:16"
+}
