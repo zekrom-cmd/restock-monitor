@@ -1,0 +1,29 @@
+name: Preiswaechter
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: preiswaechter
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q curl_cffi
+      - run: python preiswaechter.py
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+      - name: Stand speichern
+        run: |
+          git config user.name "restock-bot"
+          git config user.email "restock-bot@users.noreply.github.com"
+          git add preiswaechter-stand.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Preiswaechter-Stand"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
