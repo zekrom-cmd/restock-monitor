@@ -31,7 +31,7 @@ from curl_cffi import requests
 DIR = Path(__file__).resolve().parent
 CONFIG = DIR / "preiswaechter.json"
 STAND = DIR / "preiswaechter-stand.json"
-RESTOCK_CONFIG = Path.home() / "Library/Application Support/restock-monitor/config.json"
+FINDER_CONFIG = DIR / "config.json"  # ntfy-Thema des Grail Radar, das abonniert das Handy
 WARNEN_NACH = 15  # so viele Fehlversuche hintereinander, dann Warn-Push (Mac: 30 Minuten)
 DEC = json.JSONDecoder()
 
@@ -196,19 +196,24 @@ def ntfy_thema(cfg):
         return os.environ["NTFY_TOPIC"]
     if cfg.get("ntfy_topic"):
         return cfg["ntfy_topic"]
-    if RESTOCK_CONFIG.exists():
-        return json.loads(RESTOCK_CONFIG.read_text()).get("ntfy_topic")
+    if FINDER_CONFIG.exists():
+        return json.loads(FINDER_CONFIG.read_text()).get("ntfy_topic")
     return None
 
 
 def melden(cfg, titel, text, url, prio=5):
     thema = ntfy_thema(cfg)
     if thema:
-        try:
-            body = {"topic": thema, "title": titel, "message": text, "click": url, "priority": prio}
-            requests.post("https://ntfy.sh/", json=body, timeout=20)
-        except Exception as e:
-            log(f"ntfy-Fehler: {e}")
+        body = {"topic": thema, "title": titel, "message": text, "click": url, "priority": prio}
+        for versuch in range(3):
+            try:
+                r = requests.post("https://ntfy.sh/", json=body, timeout=20)
+                if r.status_code == 200:
+                    break
+                log(f"ntfy antwortet {r.status_code}: {r.text[:100]}")
+            except Exception as e:
+                log(f"ntfy-Fehler: {e}")
+            time.sleep(5)
     else:
         log("kein ntfy-Thema gesetzt")
     if sys.platform == "darwin":
