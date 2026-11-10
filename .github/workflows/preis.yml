@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
+    inputs:
+      test:
+        description: "Nur eine Test-Push schicken"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency: preiswaechter
@@ -16,9 +21,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -q curl_cffi
-      - run: python preiswaechter.py
+      - run: python preiswaechter.py ${{ inputs.test && '--test' || '' }}
         env:
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOPIC: ${{ secrets.PREIS_NTFY_TOPIC }}
       - name: Stand speichern
         run: |
           git config user.name "restock-bot"
